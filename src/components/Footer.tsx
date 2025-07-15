@@ -1,12 +1,18 @@
-import React from 'react';
-import { Heart, Instagram, Twitter, Dribbble, Bean as Behance } from 'lucide-react';
+import React from "react";
+import {
+  Heart,
+  Instagram,
+  Twitter,
+  Dribbble,
+  Bean as Behance,
+} from "lucide-react";
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Dribbble, href: '#', label: 'Dribbble' },
-    { icon: Behance, href: '#', label: 'Behance' }
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Dribbble, href: "#", label: "Dribbble" },
+    { icon: Behance, href: "#", label: "Behance" },
   ];
 
   return (
@@ -17,7 +23,9 @@ const Footer: React.FC = () => {
             <div className="text-2xl font-bold text-white tracking-tight mb-2">
               Miss Charos<span className="text-amber-400">.</span>
             </div>
-            <p className="text-gray-400">Creative Designer & Visual Storyteller</p>
+            <p className="text-gray-400">
+              Ijodkor dizayner va vizual hikoyachi
+            </p>
           </div>
 
           <div className="flex space-x-6">
@@ -36,9 +44,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center space-x-1">
-            <span>© 2025 Charos Designer. Made with</span>
+            <span>© 2025 Charos Dizayner. Yaratildi</span>
             <Heart className="text-red-400" size={16} />
-            <span>and lots of coffee.</span>
+            <span>va ko‘p qahva bilan.</span>
           </p>
         </div>
       </div>

@@ -35,10 +35,10 @@ const Header: React.FC = () => {
 
           <div className="hidden md:flex space-x-8">
             {[
-              { name: "Home", id: "hero", icon: Home },
-              { name: "About", id: "about", icon: User },
-              { name: "Work", id: "portfolio", icon: Briefcase },
-              { name: "Contact", id: "contact", icon: Mail },
+              { name: "Asosiy sahifa", id: "hero", icon: Home },
+              { name: "Men haqimda", id: "about", icon: User },
+              { name: "Loyhalarim", id: "portfolio", icon: Briefcase },
+              { name: "Bog'lanish", id: "contact", icon: Mail },
             ].map(({ name, id, icon: Icon }) => (
               <button
                 key={id}

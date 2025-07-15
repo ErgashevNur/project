@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Clock } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import { Mail, Phone, MapPin, Send, Clock, SendIcon } from "lucide-react";
 
 const Contact: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -28,54 +28,63 @@ const Contact: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Handle form submission logic here
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      details: 'alex.designer@email.com',
-      subText: 'Send me an email anytime!'
+      title: "Email",
+      details: "c78339936@email.com",
+      subText: "Email orqalik murojat qilishingiz mumkin",
     },
     {
       icon: Phone,
-      title: 'Phone',
-      details: '+1 (555) 123-4567',
-      subText: 'Available Mon-Fri, 9AM-6PM'
+      title: "Telefon raqam",
+      details: "+998 (90) 395 14 09",
+      subText: "Qong'iroq qilish vaqti 08.00 dan, 18.00 gacha",
     },
     {
-      icon: MapPin,
-      title: 'Location',
-      details: 'New York, NY',
-      subText: 'Available for remote work'
-    }
+      icon: SendIcon,
+      title: "Telegram",
+      details: "chxrseee",
+      subText: "Mening Telegram akkauntim",
+    },
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-gray-900 relative overflow-hidden">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="py-20 bg-gray-900 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-orange-500/5"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`transition-all duration-1000 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-        }`}>
+        <div
+          className={`transition-all duration-1000 transform ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+          }`}
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Let's <span className="text-amber-400">Connect</span>
+              Keling, <span className="text-amber-400">Bog‘lanamiz</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to bring your vision to life? Let's discuss your project and create something amazing together.
+              G'oyangizni hayotga tatbiq etishga tayyormisiz? Loyihangiz haqida
+              suhbatlashaylik va birgalikda ajoyib loyhani yarataylik.
             </p>
           </div>
 
@@ -86,7 +95,9 @@ const Contact: React.FC = () => {
                   <div
                     key={info.title}
                     className={`bg-gray-800/50 rounded-xl p-6 hover:bg-gray-800 transition-all duration-500 transform ${
-                      isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
+                      isVisible
+                        ? "translate-x-0 opacity-100"
+                        : "-translate-x-12 opacity-0"
                     }`}
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >
@@ -95,8 +106,12 @@ const Contact: React.FC = () => {
                         <info.icon className="text-gray-900" size={20} />
                       </div>
                       <div>
-                        <h3 className="text-white font-semibold">{info.title}</h3>
-                        <p className="text-amber-400 font-medium">{info.details}</p>
+                        <h3 className="text-white font-semibold">
+                          {info.title}
+                        </h3>
+                        <p className="text-amber-400 font-medium">
+                          {info.details}
+                        </p>
                         <p className="text-gray-400 text-sm">{info.subText}</p>
                       </div>
                     </div>
@@ -107,22 +122,30 @@ const Contact: React.FC = () => {
               <div className="bg-gray-800/50 rounded-xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock className="text-amber-400" size={20} />
-                  <h3 className="text-white font-semibold">Response Time</h3>
+                  <h3 className="text-white font-semibold">Javob vaqti</h3>
                 </div>
                 <p className="text-gray-300">
-                  I typically respond to all inquiries within 24 hours. For urgent projects, 
-                  feel free to give me a call directly.
+                  Odatda barcha murojaatlarga 24 soat ichida javob beraman. Agar
+                  loyiha shoshilinch bo‘lsa, bemalol to‘g‘ridan-to‘g‘ri
+                  qo‘ng‘iroq qilishingiz mumkin.
                 </p>
               </div>
             </div>
 
-            <div className={`bg-gray-800/50 rounded-xl p-8 transition-all duration-1000 transform ${
-              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
-            }`}>
+            <div
+              className={`bg-gray-800/50 rounded-xl p-8 transition-all duration-1000 transform ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-12 opacity-0"
+              }`}
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-gray-300 font-medium mb-2"
+                    >
                       Your Name
                     </label>
                     <input
@@ -137,7 +160,10 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-gray-300 font-medium mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-gray-300 font-medium mb-2"
+                    >
                       Email Address
                     </label>
                     <input
@@ -154,7 +180,10 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-gray-300 font-medium mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-gray-300 font-medium mb-2"
+                  >
                     Subject
                   </label>
                   <input
@@ -170,7 +199,10 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-gray-300 font-medium mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-gray-300 font-medium mb-2"
+                  >
                     Message
                   </label>
                   <textarea
